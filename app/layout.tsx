@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Raleway } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Toaster } from "sonner";
 
-const raleway = Raleway({subsets:['latin'],variable:'--font-sans'});
+const raleway = Raleway({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,11 +23,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {/* Navbar */}
-        {/* Navbar */}
         {children}
+        <Toaster position="top-right" richColors />
         {/* Footer */}
-        {/* Footer */}
-        </body>
+      </body>
     </html>
   );
 }
