@@ -91,6 +91,7 @@ export function Navbar({user} : NavbarProps) {
               </Link>
             ))}
           </div>
+          
 
           {/* User Dropdown */}
           {
