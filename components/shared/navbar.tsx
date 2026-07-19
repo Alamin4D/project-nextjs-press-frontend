@@ -92,6 +92,8 @@ export function Navbar({user} : NavbarProps) {
             ))}
           </div>
 
+          
+
           {/* User Dropdown */}
           {
             user.success ? (
