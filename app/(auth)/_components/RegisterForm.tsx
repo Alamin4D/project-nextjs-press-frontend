@@ -3,17 +3,16 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-// import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { useActionState, useEffect } from "react"
 import { toast } from "sonner"
-import { loginAction } from "../_actions/authActions"
-import Link from "next/link"
+import { registerAction } from "../_actions/authActions"
 
 
-const LoginForm = () => {
+const RegisterForm = () => {
 
-    const [state, action, pending] = useActionState(loginAction, false)
-    // const router = useRouter()
+    const [state, action, pending] = useActionState(registerAction, false)
+    const router = useRouter()
 
 
     useEffect(() => {
@@ -21,11 +20,11 @@ const LoginForm = () => {
 
         // if(state.success){
         //     toast.success(state.message || "Login Successful");
-        //     // router.push("/dashboard")
+        //     router.push("/login")
         // }
 
         if (!state.success) {
-            toast.error(state.message || "Login failed");
+            toast.error(state.message || "Register failed");
         }
     }, [state]);
 
@@ -33,11 +32,12 @@ const LoginForm = () => {
     return (
         <form action={action} className="space-y-4">
             <Card className="p-5 space-y-4">
+                <Input name="name" type="name" placeholder="Enter Your Name" required />
                 <Input name="email" type="email" placeholder="Enter Your Email" required />
                 <Input name="password" type="password" placeholder="Enter Your Password" required />
                 <Button type="submit">
                     {
-                        pending ? "Submitting..." : "Login"
+                        pending ? "Submitting..." : "Register"
                     }
                 </Button>
             </Card>
@@ -45,4 +45,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export default RegisterForm
