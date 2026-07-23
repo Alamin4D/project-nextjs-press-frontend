@@ -6,6 +6,7 @@ export const getAllNews = async () => {
     const cookieStore = await cookies();
     const accessToken = cookieStore.get("accessToken")?.value;
 
+    
     const res = await fetch(`${process.env.BACKEND_API_URL}/api/posts`, {
         headers: accessToken
             ? {
