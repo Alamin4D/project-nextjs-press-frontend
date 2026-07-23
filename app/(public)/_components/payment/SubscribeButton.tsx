@@ -17,6 +17,7 @@ export function SubscribeButton() {
         }
     }, [state]);
 
+    
     return (
         <form action={action}>
             <Button type="submit" disabled={pending} className="w-full">
