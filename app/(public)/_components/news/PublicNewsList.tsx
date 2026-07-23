@@ -12,6 +12,7 @@ export async function PublicNewsList() {
       </p>
     );
   }
+  
 
   return (
     <div className="space-y-8">
